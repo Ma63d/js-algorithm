@@ -5,8 +5,10 @@ function quickSort(arr,start,end){
     if(arr.length<2){
         return;
     }
-    var left = start || 0;
-    var right = end || arr.length - 1;
+    start = start || 0;
+    end = end || arr.length - 1;
+    var left = start;
+    var right = end;
     var pivot = arr[left];
     while(left < right){
         while(arr[right] >= pivot && left < right){
