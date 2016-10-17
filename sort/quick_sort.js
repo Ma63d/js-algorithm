@@ -14,12 +14,15 @@ function quickSort(arr,start,end){
         while(arr[right] >= pivot && left < right){
             right--;
         }
+        //把pivot和那个小于pivot的元素交换一下
         arr[left] = arr[right];
         while(arr[left] <= pivot && left < right){
             left++;
         }
+        //把pivot和那个大于pivot的元素交换一下
         arr[right] = arr[left];
     }
+    //最后再把pivot写进去
     arr[left] = pivot;
     if(left - 1 > start){
         quickSort(arr,start,left-1);

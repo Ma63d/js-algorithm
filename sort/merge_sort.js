@@ -7,17 +7,20 @@ function mergeSort(array,start,end){
     }
     start = start || 0;
     end = end || array.length - 1;
-    console.log(start);
-    console.log(end);
+    //选择中间的位置作为分割点
     var mid = Math.floor((start + end) / 2);
     if(start < mid){
+        //对左边的序列递归执行排序过程
         mergeSort(array,start,mid);
     }
     if(mid + 1< end){
+        //对右边的序列递归执行排序过程
         mergeSort(array,mid+1,end);
     }
+    //排好序了,接下来合并就好了
     var i = start,j = mid + 1,z = 0;
      var tempArr = [];
+    //设置两个指针,合并两个数组,谁小就把谁加入数组当中
     while((i < mid + 1 ) && ( j < end + 1)){
         if(array[i] > array[j]){
             tempArr[z] = array[j];

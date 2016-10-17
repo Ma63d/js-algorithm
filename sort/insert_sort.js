@@ -84,6 +84,9 @@ function insertSort3(arr){
         return;
     }
     var staticLinkedList = arr.map(function(value){
+        //构造静态链表
+        //每一个元素是一个对象,value是原先数组的具体的内容,
+        // 后面的代码里会向对象添加next属性,表示链表的后继节点是数组的哪个元素
         return {value:value}
     })
     staticLinkedList.next = 0;
